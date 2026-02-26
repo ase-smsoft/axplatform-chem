@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>타이틀</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../images/common/simbol.svg">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body class="sign-body">
+    <header class="sign-header"><img src="../images/common/logo.svg" alt="화학물질정보 공동활용 플랫폼 민원시스템"></header>
+
+    <div class="sign-wrap"></div>
+
+    <footer class="sign-footer">
+        <p class="copyright">Copyright © 2026 Ministry of environment. All rights reserved.x</p>
+    </footer>
+
+
+    <div class="popup-wrap" id="tempPopId">
+        <div class="dim"></div>
+        <div class="pop-wrap">
+            <div class="popup">
+            <div class="pop-body">
+                <div class="pop-section">
+                    <div class="data-header">
+                        <h3 class="pop-tit">사업자 정보 입력 (담당자 검토중입니다.)</h3>
+                        <div class="right">
+                            <p class="txt-require">* 필수입력</p>
+                        </div>
+                    </div>
+                    <p class="txt-tit-sub">심사자로부터 심사가 완료되면 서비스를 정상적으로 이용하실 수 있습니다.</p>
+                    <div class="data-type2">
+                        <table>
+                            <caption>사업자 정보 등록</caption>
+                            <colgroup>
+                                <col style="width:180px;">
+                                <col style="width:auto;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><label>사업자등록번호<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                    <td>111-22-33333</td>
+                                </tr>
+                                <tr>
+                                    <th><label for="corp-num">법인등록번호</label></th>
+                                    <td>
+                                        <div class="fm">
+                                            <div class="row">
+                                                <input type="text" id="corp-num" style="width:156px;" disabled placeholder="" aria-label="법인등록번호 앞자리">
+                                                <span class="dash">-</span>
+                                                <input type="text" style="width:156px;" disabled placeholder="" aria-label="법인등록번호 뒷자리">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="company-name">사업자 명<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                    <td>
+                                        <div class="fm">
+                                            <input type="text" id="company-name" class="auto" disabled style="width:338px;" placeholder="사업자명(회사명) 입력">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label>대표자 명<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                    <td>
+                                        <div class="fm">
+                                            <input type="text" class="auto" value="홍길동" style="width:338px;" disabled>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>사업자 주소<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></th>
+                                    <td>
+                                        <div class="fm">
+                                            <div class="input-addr">
+                                                <div class="addr-code">
+                                                    <input type="text" placeholder="우편번호" disabled aria-label="우편번호">
+                                                    <button type="button" class="btn-sm st3">주소검색</button>
+                                                </div>
+                                                <div class="addr-detail">
+                                                    <input type="text" placeholder="기본주소" disabled aria-label="기본주소">
+                                                    <input type="text" placeholder="상세주소 입력" disabled aria-label="상세주소">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="tel-area">사업자 연락처<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                    <td>
+                                        <div class="fm">
+                                            <div class="input-tel">
+                                                <select id="tel-area" aria-label="지역번호/통신사 번호" disabled>
+                                                    <option value="02" selected>02</option>
+                                                    <option value="031">031</option>
+                                                </select>
+                                                <span>-</span>
+                                                <input type="text" maxlength="4" aria-label="전화번호 중간" disabled>
+                                                <span>-</span>
+                                                <input type="text" maxlength="4" aria-label="전화번호 끝" disabled>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="fax-area">사업자 팩스번호<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                    <td>
+                                        <div class="fm">
+                                            <div class="input-tel">
+                                                <select id="fax-area" aria-label="지역번호/통신사 번호" disabled>
+                                                    <option value="02" selected>02</option>
+                                                    <option value="031">031</option>
+                                                </select>
+                                                <span>-</span>
+                                                <input type="text" maxlength="4" aria-label="팩스번호 중간" disabled>
+                                                <span>-</span>
+                                                <input type="text" maxlength="4" aria-label="팩스번호 끝" disabled>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="company-type">기업구분<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                    <td>
+                                        <div class="fm">
+                                            <select id="company-type" style="width:338px;" disabled>
+                                                <option value="" selected>대기업</option>
+                                                <option value="">중견기업</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>관리구분</th>
+                                    <td>
+                                        <div class="fm">
+                                            <div class="input-choice-wrap">
+                                                <span class="input-choice">
+                                                    <input type="checkbox" id="manage-manufacture" checked disabled>
+                                                    <i></i>
+                                                    <label for="manage-manufacture">제조</label>
+                                                </span>
+                                                <span class="input-choice">
+                                                    <input type="checkbox" id="manage-import" disabled>
+                                                    <i></i>
+                                                    <label for="manage-import">수입</label>
+                                                </span>
+                                                <span class="input-choice">
+                                                    <input type="checkbox" id="manage-senior" disabled>
+                                                    <i></i>
+                                                    <label for="manage-senior">선임</label>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label>사업자등록증<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                    <td>
+                                        <div class="fm">
+                                            <div class="input-upload">
+                                                <div class="inp-del"><input type="text" placeholder="파일을 선택하세요" disabled aria-label="사업자등록증 파일 업로드"></div>
+                                                <button type="button" data-id="file-upload" class="btn-sm st3">업로드</button>
+                                                <input type="file">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="pop-footer">
+                <div class="btn-wrap">
+                    <div class="right">
+                        <button type="button" class="btn-popup st1">로그아웃</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+  popOpen('#tempPopId');
+
+</script>
+
+</body>
+</html>

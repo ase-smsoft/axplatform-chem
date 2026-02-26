@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no"/>
+<title>title</title>
+
+<script src="js/jquery-3.7.1.min.js"></script>
+
+<!-- style -->
+<style type="text/css">
+  *{margin:0;padding:0;}
+  body {padding:20px; font-family:Tahoma, Sans-Serif; color:#333; font-size:11px; background-color:#fff;}
+  h1 {color:#000; letter-spacing:-2px;}
+  h2 {margin-top:20px;padding-left:10px;letter-spacing:-2px;position:relative;font-size:18px;}
+  h2:before{content:'';display:block;position:absolute;top:50%;left:0;width:5px;height:5px;background:#333;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+  .currentsite {display:block; position:absolute; right:40px; top:20px;}
+  .mwork table {width:100%; border-collapse:collapse; border:0px solid #666;margin-top:10px;}
+  .mwork caption {text-align:left; font-size:200%; color:#999;}
+  .mwork th {padding:6px; border:1px solid #fff; color:#fff; font-size:110%; background-color:#1F5DBE;}
+  .mwork td {height:16px; padding:4px; padding-left:10px; border:1px solid #666;}
+  .mwork a,
+  .mwork a:link, #mwork a:visited {color:#009; text-decoration:none;}
+  .mwork a:hover, #mwork a:active {color:#00f; text-decoration:underline;}
+  .mwork td:hover {background-color:#ddd !important;}
+  
+
+  .title td{background:#eee;}
+
+</style>
+<!-- //style -->
+
+<script>
+  $(function(){
+    let data = [
+      // 공통
+      ["공통", "title", "", "", ""],
+      ["", "로딩", "", "", "html/loading.html", "", "", ""],
+      ["", "alert", "", "", "html/alert.html", "", "", ""],
+      ["로그인", "title", "", "", ""],
+      ["", "로그인", "", "", "html/P-로그인-01.html", "", "", ""],
+      ["", "소속 사업자 조회", "", "", "html/P-로그인-02.html", "", "", ""],
+      ["", "조회 결과 있음", "", "", "html/P-로그인-03.html", "", "", ""],
+      ["", "", "사업자 승계 신청", "", "html/P-로그인-03-01.html", "", "", ""],
+      ["", "", "사업자 승계 신청 완료", "", "html/P-로그인-03-01-01.html", "", "", ""],
+      ["", "", "직원으로 가입 신청 완료", "", "html/P-로그인-03-02.html", "", "", ""],
+      ["", "", "컨설팅으로 가입 신청 완료", "", "P-로그인-03-02 참조", "", "", ""],
+      ["", "조회 결과 없음", "", "", "html/P-로그인-04.html", "", "", "", ""],
+      ["", "", "사업자 정보 등록", "", "html/P-로그인-04-01-01.html", "", "", ""],
+      ["", "", "", "(중기업, 소기업)", "P-로그인-04-01-01 참조", "", "", ""],
+      ["", "", "직원으로 가입(위임)", "", "P-로그인-04-01-01 참조", "", "", ""],
+      ["", "", "담당자 검토중", "", "html/P-로그인-04-03.html", "", "", ""],
+      ["", "사업자 승계 반려", "", "", "html/P-로그인-05.html", "", "", ""],
+      ["", "사업자 정보 등록", "(보완요청)", "", "html/P-로그인-06-01.html", "", "", ""],
+      ["회원찾기", "title", "", "", ""],
+      ["", "아이디/비밀번호 찾기", "", "", "html/P-회원찾기-A-01.html", "", "", ""],
+      ["회원가입", "title", "", "", ""],
+      ["", "약관동의", "", "", "html/P-회원가입-A-01-01.html", "", "", ""],
+      ["", "기본정보 입력", "", "", "html/P-회원가입-A-01-02.html", "", "", ""],
+      ["", "회원가입 완료", "", "", "html/P-회원가입-A-01-03.html", "", "", ""],
+      ["메인", "title", "", "", ""],
+      ["", "메인", "", "", "html/main.html", "", "", ""],
+      
+    ];
+
+
+
+    for(var i = 0 ; i<= data.length -1 ; i++){
+      if(data[i][1] == 'title'){
+        $('tbody').append('<tr class="title">'+
+          '<td>'+data[i][0]+'</td>' + 
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+          '<td></td>' +
+        '</tr>')
+      }else{
+        $('tbody').append('<tr>'+
+          '<td>'+data[i][0]+'</td>' +
+          '<td>'+data[i][1]+'</td>' +
+          '<td>'+data[i][2]+'</td>' +
+          '<td>'+data[i][3]+'</td>' +
+          ((data[i][4]).includes('html') ? '<td><a href="'+data[i][4]+'">'+data[i][4]+'</a></td>' :'<td>'+ data[i][4] +'</td>') +
+          ((data[i][5]).includes('html') ? '<td><a href="javascript:void(0);" onclick="window.open(\'' + data[i][4] + '?popup\', \'_blank\', \'resizable=no,scrollbars=no\')">' + data[i][5] + '</a></td>' : '<td>'+ data[i][5] +'</td>') +
+          '<td>'+data[i][6]+'</td>' +
+        '</tr>')
+      }
+    }
+
+  });
+
+
+
+
+</script>
+
+</head>
+<!-- html body -->
+<body>
+<!-- sheet -->
+<h1>Publishing Work Sheet </h1>
+
+<div class="mwork">
+  <table>
+    <colgroup>
+			<col style="width:120px" />
+			<col style="width:150px" />
+			<col style="width:150px" />
+			<col style="width:150px" />
+			<col style="width:200px" />
+			<col style="width:200px" />
+			<col style="width:auto" />
+    </colgroup>
+
+    <thead>
+      <tr>
+				<th>Category</th>
+				<th>1Depth</th>
+				<th>2Depth</th>
+				<th>3Depth</th>
+				<th>FileName/Link</th>
+				<th>window popup</th>
+				<th>Memo</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+<!-- //sheet -->
+
+</body>
+</html>

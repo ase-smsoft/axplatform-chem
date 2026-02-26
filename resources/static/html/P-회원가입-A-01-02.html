@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>타이틀</title>
+
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
+<link type="text/css" rel="stylesheet" href="../images/common/simbol.svg">
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/pub-ui.js"></script>
+
+</head>
+<body class="sign-body">
+    <header class="sign-header"><img src="../images/common/logo.svg" alt="화학물질정보 공동활용 플랫폼 민원시스템"></header>
+
+    <div class="sign-wrap"></div>
+
+    <footer class="sign-footer">
+        <p class="copyright">Copyright © 2026 Ministry of environment. All rights reserved.</p>
+    </footer>
+
+
+    <div class="popup-wrap" id="joinFormPopId">
+        <div class="dim"></div>
+        <div class="pop-wrap">
+            <div class="popup" style="width: 760px;">
+                <div class="pop-body">
+                    <div class="data-header">
+                        <h3 class="pop-tit">회원가입</h3>
+                        <div class="right">
+                            <p class="txt-require">* 필수입력</p>
+                        </div>
+                    </div>
+                    <div class="step-type1">
+                        <ul>
+                            <li><div>01.약관동의</div></li>
+                            <li class="on"><div>02.기본정보 입력</div></li>
+                            <li><div>03.회원가입 완료</div></li>
+                        </ul>
+                    </div>
+                    <div class="member-join-wrap">
+                        <div class="data-type2">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th><label for="user-id">아이디<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="row">
+                                                    <input type="text" id="user-id" style="width:338px;" placeholder="아이디를 입력해주세요">
+                                                    <button type="button" class="btn-sm st3">중복확인</button>
+                                                </div>
+                                                <p class="txt-error">아이디 형식에 일치하지 않습니다.<br>5~20자 이하 영문 소문자, 숫자 조합만 입력 가능</p>
+                                                <p class="txt-error">아이디를 입력해 주세요</p>
+                                                <p class="txt-info">사용 가능한 아이디입니다.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="user-pw">비밀번호<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <input type="password" id="user-pw" style="width:338px;" placeholder="비밀번호를 입력해주세요.">
+                                                <p class="txt-error">비밀번호를 입력해 주세요</p>
+                                                <p class="txt-error">비밀번호 형식에 일치하지 않습니다.<br>10~20자 이하 문자, 숫자, 특수문자 조합 필요 ($, &amp;, 따옴표 제외)</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="user-pw-confirm">비밀번호 확인<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <input type="password" id="user-pw-confirm" style="width:338px;" placeholder="비밀번호를 한번 더 입력해 주세요.">
+                                                <p class="txt-error">비밀번호가 일치하지 않습니다.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="user-name">이름<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="row">
+                                                    <input type="text" id="user-name" style="width:338px;" disabled placeholder="이름을 입력해주세요.">
+                                                    <button type="button" class="btn-sm st3">본인인증</button>
+                                                </div>
+                                                <p class="txt-error">이미 가입된 회원입니다.</p>
+                                            </div>
+                                            <div class="fm">
+                                                <input type="text" value="홍길동" disabled style="width:338px;" >
+                                                <p class="txt-info">본인인증이 완료되었습니다.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="user-mobile">휴대전화<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-tel">
+                                                    <input type="text" id="user-mobile" disabled placeholder="" aria-label="앞자리">
+                                                    <span class="dash">-</span>
+                                                    <input type="text" disabled placeholder="" aria-label="중간 4자리">
+                                                    <span class="dash">-</span>
+                                                    <input type="text" disabled placeholder="" aria-label="끝 4자리">
+                                                </div>
+                                                <p class="txt-info">본인 인증 시 자동으로 가입됩니다.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="user-email">이메일<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-email">
+                                                    <input type="text" id="user-email" aria-label="이메일 주소" placeholder="">
+                                                    <span class="at">@</span>
+                                                    <input type="text" aria-label="이메일 제공자" placeholder="">
+                                                    <select required aria-label="메일 제공자 선택">
+                                                        <option disabled selected hidden value="">직접입력</option>
+                                                        <option>naver.com</option>
+                                                        <option>gmail.com</option>
+                                                        <option>daum.net</option>
+                                                    </select>
+                                                    <button type="button" class="btn-sm st3">중복확인</button>
+                                                </div>
+                                                <p class="txt-error">이메일을 입력해주세요.</p>
+                                                <p class="txt-error">이미 등록된 이메일입니다.</p>
+                                                <p class="txt-info">사용 가능한 이메일입니다.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="sel-office-tel">사무실 전화번호<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-tel">
+                                                    <select id="sel-office-tel" aria-label="지역번호">
+                                                        <option value="02">02</option>
+                                                        <option value="031">031</option>
+                                                        <option value="032">032</option>
+                                                        <option value="033">033</option>
+                                                        <option value="041">041</option>
+                                                        <option value="042">042</option>
+                                                        <option value="043">043</option>
+                                                        <option value="051">051</option>
+                                                        <option value="052">052</option>
+                                                        <option value="053">053</option>
+                                                        <option value="054">054</option>
+                                                        <option value="055">055</option>
+                                                        <option value="061">061</option>
+                                                        <option value="062">062</option>
+                                                        <option value="063">063</option>
+                                                        <option value="064">064</option>
+                                                    </select>
+                                                    <span class="dash">-</span>
+                                                    <input type="text" placeholder="" aria-label="중간 번호">
+                                                    <span class="dash">-</span>
+                                                    <input type="text" placeholder="" aria-label="끝 번호">
+                                                </div>
+                                                <p class="txt-error">사무실 전화번호를 입력해 주세요.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="pop-footer">
+                    <div class="btn-wrap">
+                        <div class="right">
+                            <button type="button" class="btn-popup st2">이전</button>
+                            <button type="button" class="btn-popup st1">회원가입</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+  popOpen('#joinFormPopId');
+</script>
+
+</body>
+</html>
