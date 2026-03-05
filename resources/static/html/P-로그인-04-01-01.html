@@ -5,287 +5,288 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="format-detection" content="telephone=no">
-<title>타이틀</title>
+<title>민원인</title>
 
 <link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
-<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
-<link type="text/css" rel="stylesheet" href="../images/common/simbol.svg">
+<link type="text/css" rel="stylesheet" href="../css/index.css">
+<link type="text/css" rel="stylesheet" href="../css/index2.css">
 <link type="text/css" rel="stylesheet" href="../css/style.css">
 <script src="../js/jquery-3.7.1.min.js"></script>
-<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
-<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.js"></script>
 <script src="../js/pub-ui.js"></script>
-
 </head>
 <body class="sign-body">
-    <header class="sign-header"><img src="../images/common/logo.svg" alt="화학물질정보 공동활용 플랫폼 민원시스템"></header>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script>
+            $.get("common/header.html", function(data) {
+                $(data).prependTo(".wrap");
+            });
+        </script>
+        <div class="container" id="content">
+            <div class="sign-contents">
 
-    <div class="sign-wrap"></div>
-
-    <footer class="sign-footer">
-        <p class="copyright">Copyright © 2026 Ministry of environment. All rights reserved.x</p>
-    </footer>
-
-
-    <div class="popup-wrap" id="tempPopId">
-        <div class="dim"></div>
-        <div class="pop-wrap">
-            <div class="popup">
-            <div class="pop-body">
-                <div class="pop-section">
-                    <div class="data-header">
-                        <h3 class="pop-tit">사업자 정보 등록</h3>
-                        <div class="right">
-                            <p class="txt-require">* 필수입력</p>
+                <div class="sign-contents-box">
+                    <div class="sign-section">
+                        <div class="data-header">
+                            <h3 class="sign-tit">사업자 정보 등록</h3>
+                            <div class="right">
+                                <p class="txt-require">* 필수입력</p>
+                            </div>
+                        </div>
+                        <div class="detail-table">
+                            <table class="default-table">
+                                <caption>사업자 정보 등록</caption>
+                                <colgroup>
+                                    <col style="width:180px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><label>사업자등록번호<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <input type="text" class="auto" style="width:100%;" value="111-22-33333" disabled>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="corp-num">법인등록번호</label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="row">
+                                                    <input type="text" id="corp-num" style="width:156px;" placeholder="" aria-label="법인등록번호 앞자리">
+                                                    <span class="dash">-</span>
+                                                    <input type="text" style="width:156px;" placeholder="" aria-label="법인등록번호 뒷자리">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="company-name">사업자 명<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <input type="text" id="company-name" class="auto" style="width:338px;" placeholder="사업자명(회사명) 입력">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label>대표자 명<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <input type="text" class="auto" value="홍길동" style="width:338px;" disabled>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">사업자 주소<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-addr">
+                                                    <div class="addr-code">
+                                                        <input type="text" placeholder="우편번호" disabled aria-label="우편번호">
+                                                        <button type="button" class="btn btn-navy">주소검색</button>
+                                                    </div>
+                                                    <div class="addr-detail">
+                                                        <input type="text" placeholder="기본주소" disabled aria-label="기본주소">
+                                                        <input type="text" placeholder="상세주소 입력" aria-label="상세주소">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="tel-area">사업자 연락처<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-tel">
+                                                    <select id="tel-area" aria-label="지역번호/통신사 번호">
+                                                        <option value="02" selected>02</option>
+                                                        <option value="031">031</option>
+                                                    </select>
+                                                    <span>-</span>
+                                                    <input type="text" maxlength="4" aria-label="전화번호 중간">
+                                                    <span>-</span>
+                                                    <input type="text" maxlength="4" aria-label="전화번호 끝">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="fax-area">사업자 팩스번호<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-tel">
+                                                    <select id="fax-area" aria-label="지역번호/통신사 번호">
+                                                        <option value="02" selected>02</option>
+                                                        <option value="031">031</option>
+                                                    </select>
+                                                    <span>-</span>
+                                                    <input type="text" maxlength="4" aria-label="팩스번호 중간">
+                                                    <span>-</span>
+                                                    <input type="text" maxlength="4" aria-label="팩스번호 끝">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="company-type">기업구분<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <select id="company-type" style="width:338px;">
+                                                    <option value="" selected>대기업</option>
+                                                    <option value="">중견기업</option>
+                                                </select>
+                                                <p class="txt-error">수수료 산정 시 반영되는 정보로 중견기업은 대기업에 해당됩니다.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">관리구분</th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-choice-wrap">
+                                                    <span class="input-choice">
+                                                        <input type="checkbox" id="manage-manufacture">
+                                                        <label for="manage-manufacture">제조</label>
+                                                    </span>
+                                                    <span class="input-choice">
+                                                        <input type="checkbox" id="manage-import">
+                                                        <label for="manage-import">수입</label>
+                                                    </span>
+                                                    <span class="input-choice">
+                                                        <input type="checkbox" id="manage-senior">
+                                                        <label for="manage-senior">선임</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label>사업자등록증<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-upload">
+                                                    <div class="inp-del"><input type="text" placeholder="파일을 선택하세요" disabled aria-label="사업자등록증 파일 업로드"></div>
+                                                    <button type="button" data-id="file-upload" class="btn btn-navy">업로드</button>
+                                                    <input type="file">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label>중소기업 증빙서류<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-upload">
+                                                    <div class="inp-del"><input type="text" placeholder="파일을 선택하세요" disabled aria-label="사업자등록증 파일 업로드"></div>
+                                                    <button type="button" data-id="file-upload" class="btn btn-navy">업로드</button>
+                                                    <input type="file">
+                                                </div>
+                                                <p class="txt-error">중소기업 증빙서류는 중소기업확인서(중소기업현황정보시스템, sminfo.mss.go.kr에서 발급 가능)를 제출하여 주시기 바랍니다.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label for="startDate">중소기업 확인서 <br>유효기간<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="date-wrap">
+                                                    <div class="datepicker">
+                                                        <input type="text" id="startDate" name="searchStartDt" class="default-input datepicker-input" aria-label="시작일"  value="2025-03-04">
+                                                        <label for="startDate" class="datepicker-ico"></label>
+                                                    </div>
+                                                    <div class="datepicker">
+                                                        <input type="text" id="endDate" name="searchEndDt" class="default-input datepicker-input" aria-label="종료일" value="2026-03-04">
+                                                        <label for="endDate" class="datepicker-ico"></label>
+                                                    </div>
+                                                </div>
+                                                <p class="txt-error">중소기업 증빙서류와 동일하게 유효기간을 입력하시기 바랍니다.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><label>중소기업 증빙서류<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-upload">
+                                                    <div class="inp-del"><input type="text" placeholder="파일을 선택하세요" disabled aria-label="사업자등록증 파일 업로드"></div>
+                                                    <button type="button" data-id="file-upload" class="btn btn-navy">업로드</button>
+                                                    <input type="file">
+                                                </div>
+                                                <p class="txt-error">중소기업 증빙서류는 중소기업확인서(중소기업현황정보시스템, sminfo.mss.go.kr에서 발급 가능)를 제출하여 주시기 바랍니다.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="data-type2">
-                        <table>
-                            <caption>사업자 정보 등록</caption>
-                            <colgroup>
-                                <col style="width:180px;">
-                                <col style="width:auto;">
-                            </colgroup>
-                            <tbody>
-                                <tr>
-                                    <th><label>사업자등록번호<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
-                                    <td>
-                                        <div class="fm">
-                                            <input type="text" class="auto" style="width:100%;" value="111-22-33333" disabled>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="corp-num">법인등록번호</label></th>
-                                    <td>
-                                        <div class="fm">
-                                            <div class="row">
-                                                <input type="text" id="corp-num" style="width:156px;" placeholder="" aria-label="법인등록번호 앞자리">
-                                                <span class="dash">-</span>
-                                                <input type="text" style="width:156px;" placeholder="" aria-label="법인등록번호 뒷자리">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="company-name">사업자 명<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
-                                    <td>
-                                        <div class="fm">
-                                            <input type="text" id="company-name" class="auto" style="width:338px;" placeholder="사업자명(회사명) 입력">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label>대표자 명<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
-                                    <td>
-                                        <div class="fm">
-                                            <input type="text" class="auto" value="홍길동" style="width:338px;" disabled>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>사업자 주소<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></th>
-                                    <td>
-                                        <div class="fm">
-                                            <div class="input-addr">
-                                                <div class="addr-code">
-                                                    <input type="text" placeholder="우편번호" disabled aria-label="우편번호">
-                                                    <button type="button" class="btn-sm st3">주소검색</button>
-                                                </div>
-                                                <div class="addr-detail">
-                                                    <input type="text" placeholder="기본주소" disabled aria-label="기본주소">
-                                                    <input type="text" placeholder="상세주소 입력" aria-label="상세주소">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="tel-area">사업자 연락처<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
-                                    <td>
-                                        <div class="fm">
-                                            <div class="input-tel">
-                                                <select id="tel-area" aria-label="지역번호/통신사 번호">
-                                                    <option value="02" selected>02</option>
-                                                    <option value="031">031</option>
-                                                </select>
-                                                <span>-</span>
-                                                <input type="text" maxlength="4" aria-label="전화번호 중간">
-                                                <span>-</span>
-                                                <input type="text" maxlength="4" aria-label="전화번호 끝">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="fax-area">사업자 팩스번호<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
-                                    <td>
-                                        <div class="fm">
-                                            <div class="input-tel">
-                                                <select id="fax-area" aria-label="지역번호/통신사 번호">
-                                                    <option value="02" selected>02</option>
-                                                    <option value="031">031</option>
-                                                </select>
-                                                <span>-</span>
-                                                <input type="text" maxlength="4" aria-label="팩스번호 중간">
-                                                <span>-</span>
-                                                <input type="text" maxlength="4" aria-label="팩스번호 끝">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="company-type">기업구분<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
-                                    <td>
-                                        <div class="fm">
-                                            <select id="company-type" style="width:338px;">
-                                                <option value="" selected>대기업</option>
-                                                <option value="">중견기업</option>
-                                            </select>
-                                            <p class="txt-error">수수료 산정 시 반영되는 정보로 중견기업은 대기업에 해당됩니다.</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>관리구분</th>
-                                    <td>
-                                        <div class="fm">
-                                            <div class="input-choice-wrap">
-                                                <span class="input-choice">
-                                                    <input type="checkbox" id="manage-manufacture">
-                                                    <i></i>
-                                                    <label for="manage-manufacture">제조</label>
-                                                </span>
-                                                <span class="input-choice">
-                                                    <input type="checkbox" id="manage-import">
-                                                    <i></i>
-                                                    <label for="manage-import">수입</label>
-                                                </span>
-                                                <span class="input-choice">
-                                                    <input type="checkbox" id="manage-senior">
-                                                    <i></i>
-                                                    <label for="manage-senior">선임</label>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label>사업자등록증<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
-                                    <td>
-                                        <div class="fm">
-                                            <div class="input-upload">
-                                                <div class="inp-del"><input type="text" placeholder="파일을 선택하세요" disabled aria-label="사업자등록증 파일 업로드"></div>
-                                                <button type="button" data-id="file-upload" class="btn-sm st3">업로드</button>
-                                                <input type="file">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label>중소기업 증빙서류<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
-                                    <td>
-                                        <div class="fm">
-                                            <div class="input-upload">
-                                                <div class="inp-del"><input type="text" placeholder="파일을 선택하세요" disabled aria-label="사업자등록증 파일 업로드"></div>
-                                                <button type="button" data-id="file-upload" class="btn-sm st3">업로드</button>
-                                                <input type="file">
-                                            </div>
-                                            <p class="txt-error">중소기업 증빙서류는 중소기업확인서(중소기업현황정보시스템, sminfo.mss.go.kr에서 발급 가능)를 제출하여 주시기 바랍니다.</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="date">중소기업 확인서 <br>유효기간<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
-                                    <td>
-                                        <div class="fm">
-                                            <div class="input-date">
-                                                <input type="text" class="datepicker auto start-date" id="date" aria-label="시작일" placeholder="">
-                                                <span class="dash">-</span>
-                                                <input type="text" class="datepicker auto end-date" aria-label="종료일" placeholder="">
-                                            </div>
-                                            <p class="txt-error">중소기업 증빙서류와 동일하게 유효기간을 입력하시기 바랍니다.</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label>중소기업 증빙서류<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></label></th>
-                                    <td>
-                                        <div class="fm">
-                                            <div class="input-upload">
-                                                <div class="inp-del"><input type="text" placeholder="파일을 선택하세요" disabled aria-label="사업자등록증 파일 업로드"></div>
-                                                <button type="button" data-id="file-upload" class="btn-sm st3">업로드</button>
-                                                <input type="file">
-                                            </div>
-                                            <p class="txt-error">중소기업 증빙서류는 중소기업확인서(중소기업현황정보시스템, sminfo.mss.go.kr에서 발급 가능)를 제출하여 주시기 바랍니다.</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
 
-                <div class="pop-section">
-                    <h3 class="pop-tit">위임 서류 업로드</h3>
-                    <p class="txt-tit-sub">위임에 필요한 위임장과 재직증명서를 첨부해 주시기 바랍니다.</p>
-                    <div class="data-type2">
-                        <table>
-                            <colgroup>
-                                <col style="width:120px;">
-                                <col style="width:auto;">
-                            </colgroup>
-                            <tbody>
-                                <tr>
-                                    <th>위임장<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></th>
-                                    <td>
-                                        <div class="fm">
-                                            <div class="input-upload">
-                                                <div class="inp-del"><input type="text" placeholder="파일을 선택하세요" disabled aria-label="위임장 파일 업로드"></div>
-                                                <button type="button" data-id="file-upload" class="btn-sm st3">업로드</button>
-                                                <button type="button" class="btn-sm st3"><span>위임장 양식</span><svg class="ico-down"><use href="../images/common/simbol.svg#ico-down"></use></svg></button>
-                                                
-                                                <input type="file">
+                    <div class="sign-section">
+                        <h3 class="sign-tit">위임 서류 업로드</h3>
+                        <p class="txt-tit-sub">위임에 필요한 위임장과 재직증명서를 첨부해 주시기 바랍니다.</p>
+                        <div class="detail-table">
+                            <table class="default-table">
+                                <caption>위임 서류 업로드</caption>
+                                <colgroup>
+                                    <col style="width:120px;">
+                                    <col style="width:auto;">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">위임장<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-upload">
+                                                    <div class="inp-del"><input type="text" placeholder="파일을 선택하세요" disabled aria-label="위임장 파일 업로드"></div>
+                                                    <button type="button" data-id="file-upload" class="btn btn-navy">업로드</button>
+                                                    <button type="button" class="btn btn-navy"><span>위임장 양식</span><svg class="ico-down"><use href="../images/common/simbol.svg#ico-down"></use></svg></button>
+                                                    
+                                                    <input type="file">
+                                                </div>
+                                                <!-- <p class="txt-info">승계받는 담당자가 사업자등록증상의 대표자일 경우 위임장 대신 사업자등록증을 업로드 하시기 바랍니다.</p> -->
                                             </div>
-                                            <!-- <p class="txt-info">승계받는 담당자가 사업자등록증상의 대표자일 경우 위임장 대신 사업자등록증을 업로드 하시기 바랍니다.</p> -->
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>재직증명서<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></th>
-                                    <td>
-                                        <div class="fm">
-                                            <div class="input-upload">
-                                                <div class="inp-del"><input type="text" placeholder="파일을 선택하세요" disabled aria-label="재직증명서 파일 업로드"></div>
-                                                <button type="button" data-id="file-upload" class="btn-sm st3">업로드</button>
-                                                <input type="file">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">재직증명서<em class="require" title="필수"><span class="sr-only">필수 입력항목</span>*</em></th>
+                                        <td>
+                                            <div class="fm">
+                                                <div class="input-upload">
+                                                    <div class="inp-del"><input type="text" placeholder="파일을 선택하세요" disabled aria-label="재직증명서 파일 업로드"></div>
+                                                    <button type="button" data-id="file-upload" class="btn btn-navy">업로드</button>
+                                                    <input type="file">
+                                                </div>
+                                                <p class="txt-info">개인정보(주민등록번호, 연락처 등)는 마스킹 처리 후 업로드 하시기 바랍니다.</p>
                                             </div>
-                                            <p class="txt-info">개인정보(주민등록번호, 연락처 등)는 마스킹 처리 후 업로드 하시기 바랍니다.</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                        </table>
+                                        </td>
+                                    </tr>
+                            </table>
+                        </div>
                     </div>
-                </div>
 
-            </div>
-            <div class="pop-footer">
-                <div class="btn-wrap">
-                    <div class="right">
-                        <button type="button" class="btn-popup st2">이전</button>
-                        <button type="button" class="btn-popup st1">등록</button>
+
+                    <div class="btn-wrap">
+                        <div class="right">
+                            <button type="button" class="btn btn-white">이전</button>
+                            <button type="button" class="btn btn-primary">등록</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
+            <!-- // sign-contents -->
+
+            <script>
+                $.get("common/footer.html", function(data) {
+                    $(data).appendTo(".container");
+                });
+            </script>            
         </div>
     </div>
-
-
-<script>
-  popOpen('#tempPopId');
-
-</script>
 
 </body>
 </html>

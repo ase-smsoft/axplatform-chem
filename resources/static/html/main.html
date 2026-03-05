@@ -5,15 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="format-detection" content="telephone=no">
-<title>타이틀</title>
+<title>민원인</title>
 
 <link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
-<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
-<link type="text/css" rel="stylesheet" href="../images/common/simbol.svg">
+<link type="text/css" rel="stylesheet" href="../css/index.css">
+<link type="text/css" rel="stylesheet" href="../css/index2.css">
 <link type="text/css" rel="stylesheet" href="../css/style.css">
 <script src="../js/jquery-3.7.1.min.js"></script>
-<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
-<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.js"></script>
 <script src="../js/pub-ui.js"></script>
 
 </head>
@@ -24,21 +23,195 @@
         <dd><a href="#gnbMenu">주메뉴 바로가기</a></dd>
         <dd><a href="#content">본문 바로가기</a></dd>
     </dl>
-    <header>
-        <h1 class="logo"><img src="../images/common/logo.svg" alt="화학물질정보 공동활용 플랫폼 민원시스템"></h1>
-        <div class="header-menu">
-            <span class="ip"><span>이전접속 IP</span><span>58.151.166.26</span></span>
-            <span class="contact-time"><span> 이전접속시간</span><span>2026-02-03 13:00:00</span></span>
-            <div class="login-timer">
-                <span class="time"></span>
+    <div class="wrap">
+        <script>
+            $.get("common/header.html", function(data) {
+                $(data).prependTo(".wrap");
+            });
+        </script>
+
+        <!-- 동적호출시 svg렌더링 안되는 문제로 메인에만 추가함. -->
+        <div class="gnb-wrap on">
+            <button type="button" class="btn-toggle"><span class="sr-only">열기</span><svg><use href="../images/common/simbol.svg#ico-gnb-close"></use></svg></button>
+            <div class="gnb-menu">
+                <ul>
+                    <li class="active">
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-reception"></use></svg>
+                            </span>
+                            <span class="txt">접수</span>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:void(0);">민원접수(안전원)</a></li>
+                            <li><a href="javascript:void(0);">담당자지정(안전원)</a></li>
+                            <li><a href="javascript:void(0);">등록한자의 변경신고 진행현황</a></li>
+                            <li><a href="javascript:void(0);">등록등면제 변경신청(지방유역환경청)</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-exemption"></use></svg>
+                            </span>
+                            <span class="txt">면제</span>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴 메뉴메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-existing-chemicals"></use></svg>
+                            </span>
+                            <span class="txt">기존화학물질등록</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-targeted-chemicals"></use></svg>
+                            </span>
+                            <span class="txt">등록대상기존화학물질</span>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴 메뉴메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-priority-substances"></use></svg>
+                            </span>
+                            <span class="txt">중점관리물질</span>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴 메뉴메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-civil-affairs"></use></svg>
+                            </span>
+                            <span class="txt">민원관리</span>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴 메뉴메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-statistics"></use></svg>
+                            </span>
+                            <span class="txt">통계</span>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴 메뉴메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-operations"></use></svg>
+                            </span>
+                            <span class="txt">운영관리</span>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴 메뉴메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-chemical-info"></use></svg>
+                            </span>
+                            <span class="txt">화학물질정보관리</span>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴 메뉴메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-test-data"></use></svg>
+                            </span>
+                            <span class="txt">시험자료</span>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴</a></li>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴 메뉴메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-chemical-verification"></use></svg>
+                            </span>
+                            <span class="txt">화학물질 확인</span>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="icon">
+                                <svg><use href="../images/common/simbol.svg#ico-gnb-bulletin"></use></svg>
+                            </span>
+                            <span class="txt">게시판</span>
+                        </a>
+                        <ul>
+                            <li><a href="javascript:void(0);">메뉴 메뉴메뉴메뉴메뉴메뉴메뉴</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
+            <div class="gnb-menu-hover">
+                <div class="menu">
+                    <dl>
+                        <dt>접수</dt>
+                        <dd>
+                            <ul>
+                                <li><a href="javascript:void(0);">신규대장생성</a></li>
+                                <li><a href="javascript:void(0);">차검대장</a></li>
+                                <li><a href="javascript:void(0);">성숙모본대장</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>                
+
+
+        <div class="container" id="content">
+            <div class="main-contents">
+
+            </div>
+            <script>
+                $.get("common/footer.html", function(data) {
+                    $(data).appendTo(".container");
+                });
+            </script>            
         </div>
-    </header>
-
-    
-
-    <footer class="sign-footer">
-        <p class="copyright">Copyright © 2026 Ministry of environment. All rights reserved.x</p>
-    </footer>
+    </div>
 </body>
 </html>

@@ -5,32 +5,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="format-detection" content="telephone=no">
-<title>타이틀</title>
+<title>민원인</title>
 
 <link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
-<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
-<link type="text/css" rel="stylesheet" href="../images/common/simbol.svg">
+<link type="text/css" rel="stylesheet" href="../css/index.css">
+<link type="text/css" rel="stylesheet" href="../css/index2.css">
 <link type="text/css" rel="stylesheet" href="../css/style.css">
 <script src="../js/jquery-3.7.1.min.js"></script>
-<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
-<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.js"></script>
 <script src="../js/pub-ui.js"></script>
-
 </head>
 <body style="padding:50px;">
   
-<button type="button" class="btn-md st1"
+<button type="button" class="btn btn-primary"
 onclick='customAlert("탈퇴", "정상적으로 처리 되었습니다.").then(result => {
     if (result) alert("확인 클릭");
     else alert("취소 클릭");
   });'>확인</button>
-<button type="button" class="btn-md st1"
+<button type="button" class="btn btn-white"
 onclick='customAlert("", "정상적으로 처리 되었습니다.").then(result => {
     if (result) alert("확인 클릭");
     else alert("취소 클릭");
   });'>확인</button>
   
-<button type="button" class="btn-md st2"
+<button type="button" class="btn btn-navy"
 onclick='customAlert("회원탈퇴", "회원을 탈퇴하시겠습니까?<br>회원 탈퇴 시 동일한 아이디를 사용하실 수 없습니다.", "confirm").then(result => {
     if (result) alert("확인 클릭");
     else alert("취소 클릭");

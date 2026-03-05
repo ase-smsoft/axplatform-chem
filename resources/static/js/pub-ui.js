@@ -23,9 +23,9 @@ function customAlert(title = "", message, type) {
             <div class="btn-wrap">
               ${
                 type === "confirm"
-                ? `<button type="button" class="btn-alert st2 btn-cancel">취소</button>
-                   <button type="button" class="btn-alert st1 btn-yes">확인</button>`
-                : `<button type="button" class="btn-alert st1 btn-yes">확인</button>`
+                ? `<button type="button" class="btn-alert btn-white btn-cancel">취소</button>
+                   <button type="button" class="btn-alert btn-primary btn-yes">확인</button>`
+                : `<button type="button" class="btn-alert btn-primary btn-yes">확인</button>`
               }
             </div>
           </div>
@@ -49,6 +49,99 @@ function customAlert(title = "", message, type) {
 }
 
 
+
+function gnbMenu(){
+  $('.gnb-wrap .gnb-menu li').each(function(){
+      if($(this).find('ul').length > 0){
+          $(this).addClass('has-menu');
+      }
+  })
+  // 토글 버튼으로 메뉴 열기/닫기
+  $('.gnb-wrap .btn-toggle').on('click', function(){
+      if($('.gnb-wrap').hasClass('on')){
+        $('.gnb-wrap').removeClass('on');
+        $('.gnb-wrap .gnb-menu > ul li').removeClass('on');
+        $('.gnb-wrap .gnb-menu > ul ul').hide();
+        $(this).find('.sr-only').text('열기');
+      } else {
+        $('.gnb-wrap').addClass('on');
+        $(this).find('.sr-only').text('닫기');
+      }
+  });
+
+  $('.gnb-wrap .gnb-menu').on('click', function(){
+      if(!$('.gnb-wrap').hasClass('on')){
+        $('.gnb-wrap').addClass('on');
+      }
+  });
+  $('.gnb-wrap .close').on('click', function(){
+      $('.gnb-wrap').removeClass('on');
+  });  
+
+  $('.gnb-wrap .gnb-menu li > a').on('click', function(){
+    if(!$('.gnb-wrap').hasClass('on')){
+      $('.gnb-wrap').addClass('on');
+      return;
+    }
+    let $menu = $(this).next('ul');
+
+    if($(this).parent().hasClass('has-menu')){
+      if($menu.is(':hidden')){
+        $(this).parent().siblings().removeClass('on');
+        $(this).parent().siblings().children('ul').slideUp();
+        $(this).parent().addClass('on');
+        $menu.slideDown();
+      }else{
+        $(this).parent().removeClass('on');
+        $menu.slideUp();
+      }
+    }
+    else{
+      $('.gnb-wrap .gnb-menu > ul > li').removeClass('on');
+      $(this).parent().addClass('on');
+      $('.gnb-wrap .gnb-menu > ul > li > ul').slideUp();
+    }
+  });
+}
+
+function gnbHover(){
+  const $wrap = $('.gnb-wrap');
+  const $hover = $('.gnb-menu-hover');
+  if($hover.length === 0) return;
+
+  function showFor($li){
+    const text = $li.find('> a .txt').text();
+    $hover.find('dt').text(text);
+    const $sub = $li.children('ul').clone(true);
+    $sub.find('ul').show();
+    $sub.show();
+    $hover.find('dd').empty().append($sub);
+    $hover.fadeIn();
+  }
+
+  $wrap.on('mouseenter', '.gnb-menu > ul > li', function(){
+    const $li = $(this);
+    console.log('hover item', $li.index(), $li.find('> a .txt').text());
+    showFor($li);
+  });
+
+  function maybeHide(){
+    setTimeout(function(){
+      const overMenu = $wrap.find('.gnb-menu > ul > li:hover').length > 0;
+      const overHover = $hover.is(':hover');
+      console.log('maybeHide overMenu', overMenu, 'overHover', overHover);
+      if(!overMenu && !overHover){
+        $hover.fadeOut();
+      }
+    }, 100);
+  }
+
+  $wrap.on('mouseleave', '.gnb-menu > ul > li', maybeHide);
+  $hover.on('mouseleave', maybeHide);
+}
+
+
+
 // loading
 function loading(){
   const loadingHtml = `<div class="loading-bar">
@@ -66,40 +159,40 @@ function loading(){
 
 
   // DATE
-  function datepicker(){
-    if($(".datepicker").length <= 0) return;
-    $(".datepicker").datepicker({
-      showOn: 'focus', 
-      changeYear:true,
-      changeMonth:true,
-      showMonthAfterYear:true,
-      monthNames:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-      monthNamesShort:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-      dayNames:['일','월','화','수','목','금','토'],
-      dayNamesShort:['일','월','화','수','목','금','토'],
-      dayNamesMin:['일','월','화','수','목','금','토'],
-      minDate: '',
-      maxDate: '',
-      // yearSuffix: '년',
-      onClose: function( selectedDate ) {
-        //add on event 
-      }	,
-      beforeShow: function(input, inst) {
+  // function datepicker(){
+  //   if($(".datepicker").length <= 0) return;
+  //   $(".datepicker").datepicker({
+  //     showOn: 'focus', 
+  //     changeYear:true,
+  //     changeMonth:true,
+  //     showMonthAfterYear:true,
+  //     monthNames:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+  //     monthNamesShort:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+  //     dayNames:['일','월','화','수','목','금','토'],
+  //     dayNamesShort:['일','월','화','수','목','금','토'],
+  //     dayNamesMin:['일','월','화','수','목','금','토'],
+  //     minDate: '',
+  //     maxDate: '',
+  //     // yearSuffix: '년',
+  //     onClose: function( selectedDate ) {
+  //       //add on event 
+  //     }	,
+  //     beforeShow: function(input, inst) {
         
-        if($(input).data('min')) $(input).datepicker('option', 'minDate', $(input).data('min'));
-        if($(input).data('max')) $(input).datepicker('option', 'maxDate', $(input).data('max'));
+  //       if($(input).data('min')) $(input).datepicker('option', 'minDate', $(input).data('min'));
+  //       if($(input).data('max')) $(input).datepicker('option', 'maxDate', $(input).data('max'));
   
-        setTimeout(function(){
-          if($('.ui-datepicker-year option').text().indexOf('년') == -1) $('.ui-datepicker-year option').append('년')
-        }, 10)
-        },
-        onChangeMonthYear: function(input, inst) {
-        setTimeout(function(){
-          if($('.ui-datepicker-year option').text().indexOf('년') == -1) $('.ui-datepicker-year option').append('년')
-        }, 10)
-        },
-    });
-  }
+  //       setTimeout(function(){
+  //         if($('.ui-datepicker-year option').text().indexOf('년') == -1) $('.ui-datepicker-year option').append('년')
+  //       }, 10)
+  //       },
+  //       onChangeMonthYear: function(input, inst) {
+  //       setTimeout(function(){
+  //         if($('.ui-datepicker-year option').text().indexOf('년') == -1) $('.ui-datepicker-year option').append('년')
+  //       }, 10)
+  //       },
+  //   });
+  // }
 
   function fileAdd(){
     let $wrap;
@@ -263,7 +356,9 @@ function setupFocusTrap($popup) {
 
 // ready
 $(function(){
-  datepicker();
+  gnbMenu();
+  gnbHover();
+  // datepicker();
   fileAdd();
   inputDel();
   tabEvt();

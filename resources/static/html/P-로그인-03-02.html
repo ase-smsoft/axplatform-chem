@@ -5,82 +5,78 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="format-detection" content="telephone=no">
-<title>타이틀</title>
+<title>민원인</title>
 
 <link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css">
-<link type="text/css" rel="stylesheet" href="../js/swiper10.3.1/swiper-bundle.min.css">
-<link type="text/css" rel="stylesheet" href="../images/common/simbol.svg">
+<link type="text/css" rel="stylesheet" href="../css/index.css">
+<link type="text/css" rel="stylesheet" href="../css/index2.css">
 <link type="text/css" rel="stylesheet" href="../css/style.css">
 <script src="../js/jquery-3.7.1.min.js"></script>
-<script src="../js/swiper10.3.1/swiper-bundle.min.js"></script>
-<script src="../js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../js/jquery-ui/jquery-ui.js"></script>
 <script src="../js/pub-ui.js"></script>
-
 </head>
 <body class="sign-body">
-    <header class="sign-header"><img src="../images/common/logo.svg" alt="화학물질정보 공동활용 플랫폼 민원시스템"></header>
+    <dl class="skipLink">
+        <dt>바로가기 메뉴</dt>	
+        <dd><a href="#content">본문 바로가기</a></dd>
+    </dl>
+    <div class="wrap">
+        <script>
+            $.get("common/header.html", function(data) {
+                $(data).prependTo(".wrap");
+            });
+        </script>
+        <div class="container" id="content">
+            <div class="sign-contents">
 
-    <div class="sign-wrap"></div>
-
-    <footer class="sign-footer">
-        <p class="copyright">Copyright © 2026 Ministry of environment. All rights reserved.x</p>
-    </footer>
-
-
-    <div class="popup-wrap" id="tempPopId">
-        <div class="dim"></div>
-        <div class="pop-wrap">
-            <div class="popup">
-            <div class="pop-body">
-                <div class="pop-section">
-                    <h3 class="pop-tit">직원으로 가입 신청 완료</h3>
-                    <p class="txt-tit-sub">
-                        직원으로 가입 신청이 완료되었습니다.
-                        <br>신청한 기업의 대표자 권한 아이디 담당자는 ${대표자_담당자명}입니다.
-                        <br>기업 내 대표자 계정에서 ‘마이페이지 > 사용자(직원) 승인 처리’ 화면에서 직원을 선택하고 승인 처리해야 가입이 완료됩니다.
-                    </p>
-                </div>
-                
-                <div class="pop-section">
-                    <h3 class="pop-tit">사업자 정보</h3>
-                    <div class="biz-card">
-                        <div class="biz-row">
-                            <p><b>(주)OO화학</b></p>
-                            <p><b>111-22-33333</b></p>
+                <div class="sign-contents-box">
+                    <div class="sign-section">
+                        <h3 class="sign-tit">직원으로 가입 신청 완료</h3>
+                        <p class="txt-tit-sub">
+                            직원으로 가입 신청이 완료되었습니다.
+                            <br>신청한 기업의 대표자 권한 아이디 담당자는 ${대표자_담당자명}입니다.
+                            <br>기업 내 대표자 계정에서 ‘마이페이지 > 사용자(직원) 승인 처리’ 화면에서 직원을 선택하고 승인 처리해야 가입이 완료됩니다.
+                        </p>
+                    </div>
+                    
+                    <div class="sign-section">
+                        <h3 class="sign-tit">사업자 정보</h3>
+                        <div class="biz-card">
+                            <div class="biz-row">
+                                <p><b>(주)OO화학</b></p>
+                                <p><b>111-22-33333</b></p>
+                            </div>
+                            <div class="biz-row">
+                                <p>홍길동, 이순신</p>
+                                <p>인천광역시 부평구 OOO-OO</p>
+                            </div>
                         </div>
-                        <div class="biz-row">
-                            <p>홍길동, 이순신</p>
-                            <p>인천광역시 부평구 OOO-OO</p>
+                    </div>
+
+                    <div class="sign-section">
+                        <h3 class="sign-tit">사용자 구분</h3>
+                        <div class="user-type-box">
+                            직원
+                        </div>
+                    </div>
+
+                    <div class="btn-wrap">
+                        <div class="right">
+                            <button type="button" class="btn btn-white">가입신청 취소</button>
+                            <button type="button" class="btn btn-primary">로그아웃</button>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- // sign-contents -->
 
-                <div class="pop-section">
-                    <h3 class="pop-tit">사용자 구분</h3>
-                    <div class="user-type-box">
-                        직원
-                    </div>
-                </div>
-                
-                            
-            </div>
-            <div class="pop-footer">
-                <div class="btn-wrap">
-                    <div class="right">
-                        <button type="button" class="btn-popup st2">가입신청 취소</button>
-                        <button type="button" class="btn-popup st1">로그아웃</button>
-                    </div>
-                </div>
-            </div>
-            </div>
+            <script>
+                $.get("common/footer.html", function(data) {
+                    $(data).appendTo(".container");
+                });
+            </script>            
         </div>
-    </div>    
-
-
-<script>
-  popOpen('#tempPopId');
-
-</script>  
+    </div>
 
 </body>
 </html>
